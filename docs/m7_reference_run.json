@@ -1,0 +1,41 @@
+{
+  "milestone": "M7",
+  "status": "complete",
+  "generation_holdout": {
+    "dataset": "Screen2Words dev",
+    "num_cases": 30,
+    "m6_cases_excluded": 40,
+    "slices": {
+      "rank1_exact": 10,
+      "top4_nonrank1": 10,
+      "miss": 10
+    }
+  },
+  "deterministic_generation_metrics": {
+    "citation_valid_rate": 1.0,
+    "nonempty_answer_rate": 1.0,
+    "clean_sentence_end_rate": 0.9333333333333333,
+    "generation_mean_seconds": 10.141820512452007,
+    "generation_median_seconds": 10.06374562496785,
+    "generation_p95_seconds": 13.46523470908869
+  },
+  "automated_judge": {
+    "model": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+    "calibration_pass": false,
+    "irrelevant_detection_rate": 0.0,
+    "unsupported_detection_rate": 0.0,
+    "truncation_detection_rate": 0.0,
+    "corrupt_perfect_score_rate": 1.0,
+    "unique_score_codes": 1,
+    "quality_claim_eligible": false
+  },
+  "blinded_human_audit": {
+    "num_cases": 12,
+    "faithfulness_normalized": 0.9166666666666666,
+    "relevance_normalized": 0.75,
+    "completeness_normalized": 0.75,
+    "unsupported_claim_case_rate": 0.5833333333333334,
+    "major_unsupported_claim_case_rate": 0.08333333333333333,
+    "quality_claim_source": true
+  }
+}

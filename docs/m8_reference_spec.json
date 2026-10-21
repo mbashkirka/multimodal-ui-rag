@@ -1,0 +1,27 @@
+{
+  "milestone": "M8",
+  "status": "implementation_ready_for_mac_validation",
+  "project_version": "0.8.0",
+  "api_version": "v1",
+  "endpoints": [
+    "GET /health",
+    "GET /ready",
+    "GET /v1/model-info",
+    "POST /v1/search",
+    "POST /v1/rag"
+  ],
+  "frozen_inference": {
+    "retrieval": "SigLIP2 Base NaFlex p256 + FAISS IndexFlatIP",
+    "reranking": "NaFlex p512 + 0.5/0.5 weighted RRF",
+    "evidence_policy": "deterministic rank1",
+    "vlm": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit"
+  },
+  "serving_contract": {
+    "native_process_isolation": true,
+    "default_max_concurrent_inference": 1,
+    "request_id_header": "X-Request-ID",
+    "public_absolute_paths": false,
+    "public_vlm_raw_text": false,
+    "stage_latency_breakdown": true
+  }
+}

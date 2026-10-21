@@ -1,0 +1,19 @@
+category,metric,value,scope
+Retrieval,corpus_canonical_screens,66261,RICO canonical corpus
+Retrieval,legacy_clip_recall_at_10,0.0483,Screen2Words test exact-instance
+Retrieval,siglip2_naflex_p256_recall_at_10,0.1622,Screen2Words test exact-instance
+Retrieval,final_p512_rrf_recall_at_10,0.1673,Screen2Words test exact-instance
+Retrieval,relative_r10_gain_vs_legacy,3.47,final divided by legacy
+ANN,best_hnsw_neighbor_recall_at_10,0.9288,M48 efSearch256 rejected under 0.95 gate
+Generation,human_faithfulness_normalized,0.9167,12-case blinded audit
+Generation,human_relevance_normalized,0.75,12-case blinded audit
+Generation,human_completeness_normalized,0.75,12-case blinded audit
+Generation,major_unsupported_claim_case_rate,0.0833,12-case blinded audit
+Generation,automated_judge_calibration_pass,false,same-family judge rejected
+Serving,warm_search_total_ms,171.182,M8.1 dedicated warm reference run
+Serving,warm_search_speedup_vs_m8_0,89,approximately
+Operations,pytest_passed,109,M9 target Mac acceptance
+Operations,load_http_200,1,6 concurrent requests
+Operations,load_http_429,5,6 concurrent requests
+Operations,load_http_5xx,0,6 concurrent requests
+Release,m10_version,0.10.0.1,portfolio release candidate

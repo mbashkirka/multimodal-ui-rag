@@ -1,0 +1,3 @@
+[console_scripts]
+ui-rag = ui_rag.cli:main
+ui-rag-api = ui_rag.api.run:main

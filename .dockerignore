@@ -1,0 +1,10 @@
+.git
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+artifacts
+data_storage/RICO_dataset
+data_storage/Screen2Words
+*.zip

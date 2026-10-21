@@ -1,0 +1,75 @@
+{
+  "milestone": "M3",
+  "status": "complete",
+  "selection_metric": "recall_at_10",
+  "benchmark": {
+    "name": "Screen2Words text-to-RICO instance retrieval",
+    "num_queries": 4310,
+    "unique_target_screens": 4310,
+    "corpus_vectors": 66261,
+    "search_k": 100,
+    "index_type": "IndexFlatIP"
+  },
+  "results": [
+    {
+      "name": "CLIP ViT-B/32 legacy",
+      "dimension": 512,
+      "recall_at_1": 0.011368909512761021,
+      "recall_at_5": 0.03248259860788863,
+      "recall_at_10": 0.04825986078886311,
+      "recall_at_50": 0.10696055684454757,
+      "recall_at_100": 0.13874709976798144,
+      "mrr_at_10": 0.020884524730232387,
+      "ndcg_at_10": 0.0272587758180615,
+      "query_embedding_ms_per_query": 4.391571954759745
+    },
+    {
+      "name": "SigLIP2 Base FixRes 224",
+      "model_name": "google/siglip2-base-patch16-224",
+      "backend": "transformers_siglip2",
+      "dimension": 768,
+      "recall_at_1": 0.045475638051044084,
+      "recall_at_5": 0.11461716937354989,
+      "recall_at_10": 0.1494199535962877,
+      "recall_at_50": 0.27053364269141533,
+      "recall_at_100": 0.3292343387470998,
+      "mrr_at_10": 0.07395324641844363,
+      "ndcg_at_10": 0.09172538795443594,
+      "query_embedding_ms_per_query": 5.712688080045414,
+      "faiss_search_ms_per_query": 0.1587745069505608,
+      "corpus_embedding_sha256": "b96661f0b55c435faeea1251ec31aed5a333ba2006aca0234387076accfc4706",
+      "faiss_index_sha256": "48a7fa1445eb21ea745b3860cf08252301d45d74a1ba798c98745fa090e7e59d",
+      "query_embeddings_sha256": "c812b61d4da8ec3aa45e46f39f9c98b54d1e640050dfc153f3ff589f82e49c2e"
+    },
+    {
+      "name": "SigLIP2 Base NaFlex p256",
+      "model_name": "google/siglip2-base-patch16-naflex",
+      "backend": "transformers_siglip2",
+      "max_num_patches": 256,
+      "dimension": 768,
+      "recall_at_1": 0.05197215777262181,
+      "recall_at_5": 0.12064965197215777,
+      "recall_at_10": 0.16218097447795823,
+      "recall_at_50": 0.30185614849187936,
+      "recall_at_100": 0.3730858468677494,
+      "mrr_at_10": 0.08262006039848267,
+      "ndcg_at_10": 0.10130856004336213,
+      "query_embedding_ms_per_query": 5.666928741299783,
+      "faiss_search_ms_per_query": 0.1529095997750811,
+      "corpus_embedding_sha256": "509cd1bc04e7a7a578fc6f120e0d58f5fea24be9f1781e573377359c76521fdf",
+      "faiss_index_sha256": "a6f0cf7613f1e829252bf38f74750b8bb56cd518e8056aaac2def6bb59e43477",
+      "query_embeddings_sha256": "021245c8f9863aa8c15efcc1d9a442d9571add3e4a0f36bbad8fffa50601aec4"
+    }
+  ],
+  "selected_encoder": {
+    "name": "SigLIP2 Base NaFlex p256",
+    "model_name": "google/siglip2-base-patch16-naflex",
+    "backend": "transformers_siglip2",
+    "max_num_patches": 256
+  },
+  "shared_artifacts": {
+    "legacy_mapping_sha256": "2617111636837695b04a40cfb165e85f2bd0d81d2bb6c7436479b5b2d1f520c9",
+    "canonical_mapping_artifact_sha256": "f87a45376a601e8903d6c170c439515f2b04fbb4221f2dc09c669a75ece5edda",
+    "primary_queries_sha256": "c21a062b3a43d0602bd9880918159885f4f6e1bf54a95c5f77058458880b0889"
+  }
+}

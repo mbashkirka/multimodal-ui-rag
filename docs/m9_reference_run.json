@@ -1,0 +1,42 @@
+{
+  "milestone": "M9",
+  "status": "COMPLETE",
+  "project_version": "0.9.1.1",
+  "target_environment": "macOS Apple Silicon",
+  "quality_gate": {
+    "ruff": "passed",
+    "pytest_passed": 109,
+    "release_contract": "passed",
+    "compileall": "passed",
+    "metrics_hidden_from_openapi": true,
+    "native_import_isolation": true
+  },
+  "worker_recovery": {
+    "worker": "faiss",
+    "pid_before": 32508,
+    "pid_after": 32511,
+    "restart_count": 1,
+    "timeout_count": 0,
+    "alive": true
+  },
+  "load_backpressure": {
+    "requests": 6,
+    "concurrency": 6,
+    "http_200": 1,
+    "http_429": 5,
+    "http_5xx": 0,
+    "inference_busy_total": 5,
+    "sample_success_latency_ms": {
+      "total": 5671.301249996759,
+      "encode": 5147.741875029169,
+      "search": 501.87149993143976,
+      "rerank": 16.029041027650237
+    }
+  },
+  "ready_after_tests": {
+    "encoder": {"alive": true, "restarts": 0, "timeouts": 0},
+    "faiss": {"alive": true, "restarts": 0, "timeouts": 0},
+    "vlm": {"alive": true, "restarts": 0, "timeouts": 0}
+  },
+  "artifact_fingerprint": "ec4a3ac7411b2aaf07d14d36b17b8e51de991d274c2ef008c59e7a74f1d03d43"
+}

@@ -1,0 +1,54 @@
+{
+  "milestone": "M1",
+  "status": "completed",
+  "reference_run_date": "2026-08-19",
+  "platform": "macOS Apple Silicon",
+  "package_version": "0.1.4",
+  "tests": {"passed": 10, "warnings": 4},
+  "environment": {
+    "python": "3.12.0",
+    "torch": "2.13.0",
+    "open_clip": "3.3.0",
+    "faiss": "1.11.0",
+    "numpy": "2.5.2",
+    "embedding_device": "mps",
+    "faiss_device": "cpu"
+  },
+  "corpus": {
+    "legacy_mapping_rows": 66271,
+    "canonical_vectors": 66261,
+    "collapsed_aliases": 10,
+    "dimension": 512,
+    "dtype": "float32",
+    "l2_normalized": true
+  },
+  "index": {
+    "type": "IndexFlatIP",
+    "metric": "inner_product_on_l2_normalized_vectors",
+    "size_mib": 129.42,
+    "sha256": "60bd63675ff9aa97abd0e4b1895a2294e7d39c65661626dd1910a966950a1d66"
+  },
+  "embeddings": {
+    "model_name": "ViT-B-32-quickgelu",
+    "pretrained": "openai",
+    "size_mib": 129.42,
+    "sha256": "adec9929bf948f23df0bbb26dd109d8c53a115fc37f27a7d1c8120c5a2410da8"
+  },
+  "mapping": {
+    "source_sha256": "2617111636837695b04a40cfb165e85f2bd0d81d2bb6c7436479b5b2d1f520c9",
+    "artifact_sha256": "f87a45376a601e8903d6c170c439515f2b04fbb4221f2dc09c669a75ece5edda"
+  },
+  "full_build": {
+    "batches": 4142,
+    "elapsed": "22:14",
+    "batches_per_second": 3.10,
+    "resumable_embedding_stage": true,
+    "native_process_isolation": true
+  },
+  "verification": {
+    "passed": true,
+    "self_retrieval_file": "71018.jpg",
+    "self_retrieval_rank": 1,
+    "self_retrieval_score": 1.0
+  }
+}

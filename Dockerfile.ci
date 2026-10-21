@@ -1,0 +1,12 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /app
+COPY . /app
+RUN python -m pip install --no-cache-dir --upgrade pip \
+    && python -m pip install --no-cache-dir -e '.[api,dev]'
+
+CMD ["sh", "-lc", "python -m ruff check src tests scripts && python -m pytest -q && python scripts/m9_check_release.py"]

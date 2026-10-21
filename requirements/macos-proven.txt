@@ -1,0 +1,16 @@
+# Direct dependency constraints validated on the M8/M9 Apple-Silicon profile.
+faiss-cpu==1.11.0.post1
+numpy==2.5.2
+open-clip-torch==3.3.0
+pillow==11.3.0
+torch==2.13.0
+torchvision==0.28.0
+tqdm==4.70.0
+transformers==5.15.1
+mlx==0.32.0
+mlx-vlm==0.6.8
+fastapi==0.141.1
+uvicorn==0.52.4
+pytest==8.4.2
+ruff==0.16.3
+httpx2==2.12.0

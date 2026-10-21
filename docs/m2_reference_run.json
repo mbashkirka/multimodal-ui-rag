@@ -1,0 +1,66 @@
+{
+  "milestone": "M2",
+  "status": "complete",
+  "date": "2026-08-19",
+  "platform": "macOS Apple Silicon",
+  "retriever": {
+    "model_name": "ViT-B-32-quickgelu",
+    "pretrained": "openai",
+    "dimension": 512,
+    "index_type": "IndexFlatIP",
+    "corpus_vectors": 66261,
+    "query_device": "mps",
+    "faiss_device": "cpu"
+  },
+  "benchmark": {
+    "name": "Screen2Words text-to-RICO instance retrieval",
+    "source_summaries": 112085,
+    "source_unique_screens": 22417,
+    "test_screens": 4310,
+    "search_k": 100
+  },
+  "primary": {
+    "num_queries": 4310,
+    "recall_at_1": 0.011368909512761021,
+    "recall_at_5": 0.03248259860788863,
+    "recall_at_10": 0.04825986078886311,
+    "recall_at_50": 0.10696055684454757,
+    "recall_at_100": 0.13874709976798144,
+    "mrr_at_10": 0.020884524730232387,
+    "ndcg_at_10": 0.0272587758180615,
+    "hits_within_100": 598,
+    "misses_within_100": 3712,
+    "median_rank_among_hits": 20.0,
+    "mean_rank_among_hits": 29.68561872909699,
+    "query_embedding_qps": 227.7088956532213,
+    "query_embedding_ms_per_query": 4.391571954759745,
+    "faiss_qps": 8335.304894819134,
+    "faiss_ms_per_query": 0.11997161622984624
+  },
+  "all5": {
+    "num_queries": 21550,
+    "recall_at_1": 0.012668213457076567,
+    "recall_at_5": 0.033503480278422273,
+    "recall_at_10": 0.048306264501160094,
+    "recall_at_50": 0.10278422273781902,
+    "recall_at_100": 0.1374013921113689,
+    "mrr_at_10": 0.02198445843921482,
+    "ndcg_at_10": 0.028134689549747155,
+    "hits_within_100": 2961,
+    "misses_within_100": 18589,
+    "median_rank_among_hits": 22.0,
+    "mean_rank_among_hits": 30.939209726443767,
+    "query_embedding_qps": 228.48585242861108,
+    "query_embedding_ms_per_query": 4.376638594341168,
+    "faiss_qps": 8374.97204586893,
+    "faiss_ms_per_query": 0.11940338362004012
+  },
+  "hashes": {
+    "screen_summaries_csv": "534df052d42344d9646f021b5c335ef35dfcc5879a86aedeed67e9d84efa09e5",
+    "test_screens_txt": "276f0aab53d0677777ec80ec4e6ea1fe0db32577b295ec3e2045f873dc951454",
+    "primary_queries_jsonl": "c21a062b3a43d0602bd9880918159885f4f6e1bf54a95c5f77058458880b0889",
+    "primary_query_embeddings_npy": "ea2ebf09a71cb59059c9f7d0fc40067e74385368386b6ae744a21660f244953e",
+    "all5_queries_jsonl": "e4d81c8762ba27b9baa03a823986f035c481e8da931bf96cbef56f78ccd1ee7b",
+    "all5_query_embeddings_npy": "0a0f0ce118b7c4543bb8b3e6e27f75e92e6629530f3f2bd4338cb85d72154921"
+  }
+}

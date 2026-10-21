@@ -1,0 +1,18 @@
+{
+  "milestone": "M6.2",
+  "split": "Screen2Words dev",
+  "num_cases": 40,
+  "retrieval_hit_cases": 20,
+  "retrieval_miss_cases": 20,
+  "selector_parse_valid_rate": 1.0,
+  "evidence_selection_accuracy_on_hits": 0.5,
+  "retrieval_rank1_baseline_accuracy_on_hits": 0.55,
+  "selector_absolute_gain_over_rank1_on_hits": -0.05,
+  "end_to_end_exact_selection_rate": 0.25,
+  "abstain_rate_on_misses_diagnostic": 0.0,
+  "selection_total_seconds": 435.4163260393543,
+  "selection_mean_seconds": 10.885408150983858,
+  "selection_median_seconds": 11.15322377049597,
+  "selection_p95_seconds": 15.846523458021693,
+  "decision": "Do not use categorical VLM selector in production; retain it only as an ablation."
+}

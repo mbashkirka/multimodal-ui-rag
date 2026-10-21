@@ -1,0 +1,284 @@
+{
+  "milestone": "M4",
+  "status": "COMPLETE",
+  "decision": "FlatIP exact",
+  "decision_reason": "No HNSW configuration met all pre-registered gates: exact-neighbor Recall@10 >= 0.95, task Recall@10 retention >= 0.98, and single-query p50 speedup >= 1.20x.",
+  "frozen_retrieval_stack": {
+    "encoder": "google/siglip2-base-patch16-naflex",
+    "max_num_patches": 256,
+    "embedding_dimension": 768,
+    "corpus_vectors": 66261,
+    "metric": "inner product on L2-normalized vectors (cosine ranking)",
+    "exact_index": "IndexFlatIP"
+  },
+  "benchmark": {
+    "dataset": "Screen2Words official test split, primary protocol",
+    "num_queries": 4310,
+    "search_k": 10,
+    "latency_sample_queries": 1000,
+    "batch_size": 256,
+    "rounds": 3,
+    "faiss_threads": 1
+  },
+  "selection_gates": {
+    "min_exact_neighbor_recall_at_10": 0.95,
+    "min_task_recall_at_10_retention": 0.98,
+    "min_single_query_p50_speedup": 1.2
+  },
+  "source_artifacts": {
+    "naflex_embeddings_sha256": "509cd1bc04e7a7a578fc6f120e0d58f5fea24be9f1781e573377359c76521fdf",
+    "flatip_index_sha256": "a6f0cf7613f1e829252bf38f74750b8bb56cd518e8056aaac2def6bb59e43477",
+    "source_exact_manifest_sha256": "eb24469b5ed0338cc3197504ac266aa605d45582c02a467a0064df44f6bd29ee",
+    "mapping_sha256": "f87a45376a601e8903d6c170c439515f2b04fbb4221f2dc09c669a75ece5edda"
+  },
+  "hnsw_builds": [
+    {
+      "m": 16,
+      "ef_construction": 200,
+      "build_seconds": 12.788114249997307,
+      "size_mib": 203.24254417419434,
+      "sha256": "b9c256e05387ec7e7b20b3acea3ab4be04bc6e523ffc528992bc7daddc6f4b46"
+    },
+    {
+      "m": 32,
+      "ef_construction": 200,
+      "build_seconds": 14.771025458991062,
+      "size_mib": 211.32333183288574,
+      "sha256": "0d17d8a58bda8dc27e03251ee7d7cc9111e17f91f75fa60028531e389328dfc8"
+    },
+    {
+      "m": 48,
+      "ef_construction": 200,
+      "build_seconds": 15.82999016699614,
+      "size_mib": 219.41244316101074,
+      "sha256": "25ea954b5e6790391b9821b9f6c93367084da29f1e4e63dd451313e9b8474350"
+    }
+  ],
+  "comparison": [
+    {
+      "label": "FlatIP exact",
+      "m": null,
+      "ef_search": null,
+      "neighbor_recall_at_10": 1.0,
+      "task_recall_at_10": 0.1622,
+      "task_retention": 1.0,
+      "single_query_p50_ms": 3.859,
+      "single_query_speedup": 1.0,
+      "batch_qps": 7726.4,
+      "index_size_mib": 194.12,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M16 efS16",
+      "m": 16,
+      "ef_search": 16,
+      "neighbor_recall_at_10": 0.5802,
+      "task_recall_at_10": 0.1285,
+      "task_retention": 0.793,
+      "single_query_p50_ms": 0.0628,
+      "single_query_speedup": 61.42,
+      "batch_qps": 16227.1,
+      "index_size_mib": 203.24,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M16 efS32",
+      "m": 16,
+      "ef_search": 32,
+      "neighbor_recall_at_10": 0.695,
+      "task_recall_at_10": 0.1411,
+      "task_retention": 0.87,
+      "single_query_p50_ms": 0.0993,
+      "single_query_speedup": 38.85,
+      "batch_qps": 10196.2,
+      "index_size_mib": 203.24,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M16 efS64",
+      "m": 16,
+      "ef_search": 64,
+      "neighbor_recall_at_10": 0.7864,
+      "task_recall_at_10": 0.1485,
+      "task_retention": 0.916,
+      "single_query_p50_ms": 0.1699,
+      "single_query_speedup": 22.71,
+      "batch_qps": 6000.4,
+      "index_size_mib": 203.24,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M16 efS128",
+      "m": 16,
+      "ef_search": 128,
+      "neighbor_recall_at_10": 0.8592,
+      "task_recall_at_10": 0.1545,
+      "task_retention": 0.953,
+      "single_query_p50_ms": 0.3043,
+      "single_query_speedup": 12.68,
+      "batch_qps": 3367.9,
+      "index_size_mib": 203.24,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M16 efS256",
+      "m": 16,
+      "ef_search": 256,
+      "neighbor_recall_at_10": 0.9129,
+      "task_recall_at_10": 0.158,
+      "task_retention": 0.974,
+      "single_query_p50_ms": 0.563,
+      "single_query_speedup": 6.85,
+      "batch_qps": 1797.3,
+      "index_size_mib": 203.24,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M32 efS16",
+      "m": 32,
+      "ef_search": 16,
+      "neighbor_recall_at_10": 0.61,
+      "task_recall_at_10": 0.1306,
+      "task_retention": 0.805,
+      "single_query_p50_ms": 0.0712,
+      "single_query_speedup": 54.21,
+      "batch_qps": 14301.0,
+      "index_size_mib": 211.32,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M32 efS32",
+      "m": 32,
+      "ef_search": 32,
+      "neighbor_recall_at_10": 0.7208,
+      "task_recall_at_10": 0.1429,
+      "task_retention": 0.881,
+      "single_query_p50_ms": 0.1143,
+      "single_query_speedup": 33.76,
+      "batch_qps": 8981.3,
+      "index_size_mib": 211.32,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M32 efS64",
+      "m": 32,
+      "ef_search": 64,
+      "neighbor_recall_at_10": 0.8081,
+      "task_recall_at_10": 0.1506,
+      "task_retention": 0.928,
+      "single_query_p50_ms": 0.1918,
+      "single_query_speedup": 20.12,
+      "batch_qps": 5314.5,
+      "index_size_mib": 211.32,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M32 efS128",
+      "m": 32,
+      "ef_search": 128,
+      "neighbor_recall_at_10": 0.8773,
+      "task_recall_at_10": 0.1559,
+      "task_retention": 0.961,
+      "single_query_p50_ms": 0.3403,
+      "single_query_speedup": 11.34,
+      "batch_qps": 2992.8,
+      "index_size_mib": 211.32,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M32 efS256",
+      "m": 32,
+      "ef_search": 256,
+      "neighbor_recall_at_10": 0.9247,
+      "task_recall_at_10": 0.1594,
+      "task_retention": 0.983,
+      "single_query_p50_ms": 0.6276,
+      "single_query_speedup": 6.15,
+      "batch_qps": 1619.0,
+      "index_size_mib": 211.32,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M48 efS16",
+      "m": 48,
+      "ef_search": 16,
+      "neighbor_recall_at_10": 0.6129,
+      "task_recall_at_10": 0.1327,
+      "task_retention": 0.818,
+      "single_query_p50_ms": 0.0758,
+      "single_query_speedup": 50.9,
+      "batch_qps": 13436.0,
+      "index_size_mib": 219.41,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M48 efS32",
+      "m": 48,
+      "ef_search": 32,
+      "neighbor_recall_at_10": 0.7237,
+      "task_recall_at_10": 0.1427,
+      "task_retention": 0.88,
+      "single_query_p50_ms": 0.1216,
+      "single_query_speedup": 31.74,
+      "batch_qps": 8524.6,
+      "index_size_mib": 219.41,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M48 efS64",
+      "m": 48,
+      "ef_search": 64,
+      "neighbor_recall_at_10": 0.8131,
+      "task_recall_at_10": 0.1524,
+      "task_retention": 0.94,
+      "single_query_p50_ms": 0.2003,
+      "single_query_speedup": 19.26,
+      "batch_qps": 5087.8,
+      "index_size_mib": 219.41,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M48 efS128",
+      "m": 48,
+      "ef_search": 128,
+      "neighbor_recall_at_10": 0.8799,
+      "task_recall_at_10": 0.1564,
+      "task_retention": 0.964,
+      "single_query_p50_ms": 0.3499,
+      "single_query_speedup": 11.03,
+      "batch_qps": 2892.3,
+      "index_size_mib": 219.41,
+      "eligible": false
+    },
+    {
+      "label": "HNSW M48 efS256",
+      "m": 48,
+      "ef_search": 256,
+      "neighbor_recall_at_10": 0.9288,
+      "task_recall_at_10": 0.1606,
+      "task_retention": 0.99,
+      "single_query_p50_ms": 0.6403,
+      "single_query_speedup": 6.03,
+      "batch_qps": 1572.1,
+      "index_size_mib": 219.41,
+      "eligible": false
+    }
+  ],
+  "closest_ann_candidate": {
+    "label": "HNSW M48 efS256",
+    "exact_neighbor_recall_at_10": 0.9288,
+    "task_recall_at_10": 0.1606,
+    "task_retention": 0.99,
+    "single_query_p50_ms": 0.6403,
+    "single_query_speedup": 6.03,
+    "batch_qps": 1572.1,
+    "index_size_mib": 219.41,
+    "failed_gate": "exact-neighbor Recall@10 (0.9288 < 0.95)"
+  },
+  "environment": {
+    "python": "3.12.0",
+    "faiss": "1.11.0",
+    "numpy": "2.5.2",
+    "platform": "macOS Apple Silicon"
+  }
+}

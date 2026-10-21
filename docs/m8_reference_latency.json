@@ -1,0 +1,19 @@
+{
+  "milestone": "M8_FINAL",
+  "service_version": "0.8.1",
+  "api_version": "v1",
+  "serving_mode": "persistent-isolated-workers",
+  "artifact_fingerprint": "ec4a3ac7411b2aaf07d14d36b17b8e51de991d274c2ef008c59e7a74f1d03d43",
+  "m8_0_baseline_ms": {
+    "search": {"total": 15217.429833021015, "encode": 14881.094292039052, "search": 313.9770000707358, "rerank": 20.814000046811998},
+    "rag": {"total": 34126.055208966136, "encode": 12206.356832990423, "search": 393.71158299036324, "rerank": 17.67470792401582, "generation": 21500.95175008755}
+  },
+  "m8_1_runs_ms": [
+    {"endpoint": "search", "run": 1, "total": 5683.035291964188, "encode": 5106.323292013258, "search": 532.6004580128938, "rerank": 42.50958398915827},
+    {"endpoint": "search", "run": 2, "total": 171.1823750520125, "encode": 165.44958297163248, "search": 5.189583986066282, "rerank": 0.5209579830989242},
+    {"endpoint": "rag", "run": 1, "total": 16933.655417058617, "encode": 17.57879205979407, "search": 4.877083003520966, "rerank": 0.1413749996572733, "generation": 16905.64287500456},
+    {"endpoint": "rag", "run": 2, "total": 20142.796875094064, "encode": 3365.5414580134675, "search": 1246.255625039339, "rerank": 16.219999990426004, "generation": 15510.826500016265}
+  ],
+  "steady_state_search_speedup_x": 88.895,
+  "decision": "M8_COMPLETE"
+}

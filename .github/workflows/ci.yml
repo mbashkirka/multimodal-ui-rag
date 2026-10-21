@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality-linux:
+    name: Linux quality / contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[api,dev]'
+      - name: Ruff
+        run: python -m ruff check src tests scripts
+      - name: Tests
+        run: python -m pytest -q
+      - name: Release contracts
+        run: python scripts/m9_check_release.py
+      - name: Compile
+        run: python -m compileall -q src scripts tests
+      - name: Portfolio release contracts
+        run: python scripts/m10_check_release.py
+
+  native-contract-macos:
+    name: macOS ARM native-isolation contracts
+    runs-on: macos-14
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install proven runtime surface
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[rag,api,dev]'
+      - name: Native isolation / serving contracts
+        run: >-
+          python -m pytest -q
+          tests/test_native_import_isolation.py
+          tests/test_m8_1_workers.py
+          tests/test_m9_workers.py
+          tests/test_m9_api_contract.py
+          tests/test_m9_observability.py
+      - name: Release contracts
+        run: python scripts/m9_check_release.py
+      - name: Portfolio release contracts
+        run: python scripts/m10_check_release.py

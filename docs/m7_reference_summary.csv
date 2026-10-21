@@ -1,0 +1,17 @@
+category,metric,value
+Deterministic,citation_valid_rate,1.0
+Deterministic,nonempty_answer_rate,1.0
+Deterministic,clean_sentence_end_rate,0.9333333333333333
+Latency,generation_mean_seconds,10.141820512452007
+Latency,generation_median_seconds,10.06374562496785
+Latency,generation_p95_seconds,13.46523470908869
+Human,faithfulness_normalized,0.9166666666666666
+Human,relevance_normalized,0.75
+Human,completeness_normalized,0.75
+Human,unsupported_claim_case_rate,0.5833333333333334
+Human,major_unsupported_claim_case_rate,0.08333333333333333
+JudgeCalibration,calibration_pass,false
+JudgeCalibration,irrelevant_detection_rate,0.0
+JudgeCalibration,unsupported_detection_rate,0.0
+JudgeCalibration,truncation_detection_rate,0.0
+JudgeCalibration,corrupt_perfect_score_rate,1.0

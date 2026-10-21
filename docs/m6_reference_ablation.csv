@@ -1,0 +1,5 @@
+stage,role,primary_result,latency_mean_s,decision
+M6.1,multi-image JSON grounding,"12.5% valid JSON+citations; 10% selection on hits",43.665,rejected
+M6.2,categorical VLM selector,"50% selection on hits vs 55% rank1 baseline",10.885,rejected
+M6.3,VLM verifier/gate,"90.91% false abstain when exact target is E1",9.187,rejected
+M6.4,generation-only VLM,"deterministic E1 citation; grounded smoke answer",,selected

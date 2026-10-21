@@ -1,0 +1,5 @@
+services:
+  quality:
+    build:
+      context: .
+      dockerfile: Dockerfile.ci

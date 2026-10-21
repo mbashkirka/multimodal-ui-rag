@@ -1,0 +1,64 @@
+{
+  "milestone": "M6",
+  "status": "COMPLETE",
+  "selected_architecture": "M6.4",
+  "project_version": "0.6.4",
+  "regression_tests_user_verified": 73,
+  "local_vlm": {
+    "model": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
+    "mlx": "0.32.0",
+    "mlx_vlm": "0.6.8",
+    "max_image_pixels": 1003520,
+    "visual_token_budget": 1280
+  },
+  "retrieval": {
+    "encoder_stage1": "SigLIP2 Base NaFlex p256",
+    "index": "FAISS IndexFlatIP",
+    "candidate_k": 20,
+    "stage2": "same checkpoint p512 corpus rescoring",
+    "base_weight": 0.5,
+    "fine_weight": 0.5,
+    "rrf_constant": 60,
+    "evidence_policy": "deterministic rank1"
+  },
+  "ablations": {
+    "m6_1": {
+      "structured_json_and_citation_valid_rate": 0.125,
+      "evidence_selection_accuracy_on_hits": 0.1,
+      "end_to_end_exact_selection_rate": 0.05,
+      "abstain_rate_on_misses_diagnostic": 0.0,
+      "generation_mean_seconds": 43.66524833447765,
+      "decision": "rejected"
+    },
+    "m6_2": {
+      "selector_parse_valid_rate": 1.0,
+      "evidence_selection_accuracy_on_hits": 0.5,
+      "retrieval_rank1_baseline_accuracy_on_hits": 0.55,
+      "selector_absolute_gain_over_rank1_on_hits": -0.05,
+      "end_to_end_exact_selection_rate": 0.25,
+      "selection_mean_seconds": 10.885408150983858,
+      "selection_median_seconds": 11.15322377049597,
+      "selection_p95_seconds": 15.846523458021693,
+      "decision": "rejected"
+    },
+    "m6_3": {
+      "exact_rank1_hit_cases": 11,
+      "accept_rate_when_rank1_is_exact_target": 0.09090909090909091,
+      "false_abstain_rate_when_rank1_is_exact_target": 0.9090909090909091,
+      "abstain_rate_when_target_is_elsewhere_in_top4_diagnostic": 1.0,
+      "abstain_rate_on_retrieval_misses_diagnostic": 1.0,
+      "answer_mean_seconds": 9.18674829476804,
+      "answer_median_seconds": 8.088922332972288,
+      "answer_p95_seconds": 12.621147792087868,
+      "decision": "rejected"
+    }
+  },
+  "m6_4_smoke": {
+    "query": "dark banking login screen",
+    "selected_evidence_id": "E1",
+    "filename": "61042.jpg",
+    "citations_valid": true,
+    "abstain": false,
+    "semantic_observation": "Wright-Patt Credit Union Mobile Banking login screen with visible login controls"
+  }
+}

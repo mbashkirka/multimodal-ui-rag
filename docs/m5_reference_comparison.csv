@@ -1,0 +1,4 @@
+system,recall_at_1,recall_at_5,recall_at_10,mrr_at_10,ndcg_at_10,interpretation
+NaFlex p256 text-only baseline,0.052,0.1206,0.1622,0.0826,0.1013,production baseline
+M5 p512 coarse-to-fine reranker,0.0522,0.1255,0.1673,0.0846,0.1041,selected text-only production
+M5 text+visual-exemplar fusion,0.0153,0.6974,0.7705,0.3193,0.4321,controlled target-conditioned diagnostic

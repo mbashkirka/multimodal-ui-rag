@@ -1,0 +1,27 @@
+{
+  "milestone": "M9",
+  "project_version": "0.9.1.1",
+  "frozen_semantics": "M8.1 persistent-isolated-workers over M6.4 rank1 grounded generation",
+  "worker_timeouts_seconds": {
+    "encoder": 30.0,
+    "faiss": 10.0,
+    "vlm": 60.0,
+    "startup": 300.0
+  },
+  "max_concurrent_inference": 1,
+  "recovery": {
+    "dead_worker_before_request": "restart",
+    "transport_failure_or_timeout": "restart and retry once",
+    "remote_model_or_input_error": "do not retry"
+  },
+  "observability": {
+    "structured_logging": "json-lines",
+    "prometheus_endpoint": "/metrics",
+    "metrics_in_openapi": false
+  },
+  "ci": {
+    "linux_quality": "ubuntu-24.04 / Python 3.12",
+    "macos_native_contract": "macos-14 ARM / Python 3.12"
+  },
+  "container_policy": "CI/contract image only; frozen Metal production data-plane remains native macOS"
+}
