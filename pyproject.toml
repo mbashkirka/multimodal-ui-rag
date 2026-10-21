@@ -28,7 +28,7 @@ api = [
     "uvicorn==0.52.4",
 ]
 dev = [
-    "pytest==8.4.2",
+    "pytest==9.1.1",
     "ruff==0.16.3",
     "httpx2==2.12.0",
 ]
