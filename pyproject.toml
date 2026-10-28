@@ -24,7 +24,7 @@ rag = [
     "mlx-vlm==0.6.8",
 ]
 api = [
-    "fastapi==0.141.1",
+    "fastapi==0.162.0",
     "uvicorn==0.52.4",
 ]
 dev = [
