@@ -1,5 +1,5 @@
 # Direct dependency constraints validated on the M8/M9 Apple-Silicon profile.
-faiss-cpu==1.11.0.post1
+faiss-cpu==1.15.1
 numpy==2.5.2
 open-clip-torch==3.3.0
 pillow==11.3.0
