@@ -21,7 +21,7 @@ dependencies = [
 
 [project.optional-dependencies]
 rag = [
-    "mlx-vlm==0.6.8",
+    "mlx-vlm==0.7.10",
 ]
 api = [
     "fastapi==0.141.1",
